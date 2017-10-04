@@ -1,28 +1,32 @@
 /**
  * Exercise 5.5
- *
+ * 
+ * The purpose of this exercise is to take a problem and break
+ * it into smaller problems, and to solve the smaller problems 
+ * by writing simple methods. Consider the first verse of the 
+ * song "99 Bottles of Beer":
+ * 
  * @author Eli Heuer
  */
 
 public class Exercise05 {
 
     public static void song(int bottles) {
+        System.out.println(); // Print blank Line
         if(bottles == 0){
-            System.out.println(); // Print blank Line
-            System.out.println("No bottles of beer on the wall,");
-            System.out.println("no bottles of beer.");
-            System.out.println("Ya' can't take one down, ");
-            System.out.println("ya' can't pass it around,");
-            System.out.println("'cause there are no more ");
-            System.out.println("bottles of beer on the wall!");
+            message("No bottles of beer on the wall,");
+            message("no bottles of beer.");
+            message("Ya' can't take one down, ");
+            message("ya' can't pass it around,");
+            message("'cause there are no more ");
+            message("bottles of beer on the wall!");
         } else {
-            System.out.println(); // Print blank line
-            System.out.println(bottles + " bottles of beer on the wall,");
-            System.out.println(bottles + " bottles of beer.");
-            System.out.println("Ya' take one down,"); 
-            System.out.println("ya' pass it around,");
+            message(bottles + " bottles of beer on the wall,");
+            message(bottles + " bottles of beer.");
+            message("Ya' take one down,");
+            message("ya' pass it around,");
             bottles --; // Subtract one from bottles
-            System.out.println(bottles + " bottles of beer on the wall.");
+            message(bottles + " bottles of beer on the wall.");
             song(bottles);
         }
     }
@@ -31,5 +35,8 @@ public class Exercise05 {
         int bottles = 99; // 'n' number of bottles
         song(bottles); // Start song at 'n' number of bottles
     }
-}
 
+    public static void message(String m) {
+        System.out.println(m);
+    }
+}
