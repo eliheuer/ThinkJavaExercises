@@ -5,17 +5,16 @@ public class PalindromeChecker {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         in = new Scanner(System.in);
-        prompt("Give me a word: ");
+        System.out.print("Enter some text: ");
         String word = in.nextLine();
-        message("checking... " + word);
-        message(" ");
+        message("Determining if it is a palindrome...");
         System.out.println(checkPalindrome(word));
     }
 
     public static boolean checkPalindrome(String word) {
         int wordLength = word.length();
+        message("[ok] " + word);
         if (wordLength < 2) {
             return true;
         } else if (word.charAt(0) != word.charAt(wordLength - 1)) {
@@ -27,9 +26,5 @@ public class PalindromeChecker {
 
     public static void message(String m) {
         System.out.println(m);
-    }
-
-    public static void prompt(String p) {
-        System.out.print(p);
     }
 }
